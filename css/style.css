@@ -1,0 +1,43 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  /* 4 colonnes de 200px chacune */
+  grid-gap: 10px;
+  /* Optionnel : Espace entre les images */
+  justify-content: center;
+}
+
+.sous-image {
+  width: 200px;
+  /* Largeur de chaque sous-image */
+  height: 200px;
+  /* Hauteur de chaque sous-image */
+  background-image: url("/M050-projet/memory-js/ressources/memory_detail.png");
+  /* Image contenant les 4 sous-images */
+  background-size: 934px 698px;
+  /* La taille totale de l'image */
+}
+
+/* Sous-image en haut à gauche (première sous-image) */
+.sous-image-1 {
+  background-position: -17px -15px;
+  /* Coin supérieur gauche */
+}
+
+/* Sous-image en haut à droite (deuxième sous-image) */
+.sous-image-2 {
+  background-position: -250px -15px;
+  /* Décalage horizontal à droite */
+}
+
+/* Sous-image en bas à gauche (troisième sous-image) */
+.sous-image-3 {
+  background-position: -483px -15px;
+  /* Décalage vertical vers le bas */
+}
+
+/* Sous-image en bas à droite (quatrième sous-image) */
+.sous-image-4 {
+  background-position: -717px -15px;
+  /* Décalage horizontal et vertical */
+}
