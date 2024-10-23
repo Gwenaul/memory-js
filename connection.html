@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memory</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <section class="navigation">
@@ -45,7 +48,7 @@
       </div>
     </section>
     <div class="center">
-      <form id="signup-form">
+      <form id="formConnexion">
         <h1>Connection</h1>
         <div>
           <label for="email">Adresse mail</label>
@@ -53,22 +56,21 @@
         <div>
           <input
             type="text"
-            id="email"
+            id="login-email"
             placeholder="mail@domaine.com"
-            required
           />
         </div>
         <div>
           <label for="password">Mot de passe</label>
         </div>
         <div>
-          <input type="password" id="password" placeholder="******" required />
+          <input type="password" id="login-password" placeholder="******"/>
         </div>
         <div class="mb-3 d-flex justify-content-center">
           <button class="btn btn-primary">Submit</button>
         </div>
       </form>
     </div>
-    <script src="js/app.js"></script>
+    <script type="module" src="js/app.js"></script>
   </body>
 </html>

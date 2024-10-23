@@ -4,9 +4,14 @@ body {
   background: #6589f9;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #f1f1f1;
+  font-size: x-large;
+  /* transition: background-color 0.3s ease, color 0.3s ease; */
 }
-
+.paragraph{
+  max-width: 500px;
+  text-align:center;
+}
 /* Responsive Menu - Hidden by default on small screens */
 @media (max-width: 768px) {
   nav {
@@ -51,13 +56,13 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #f8f9fa;
+  background-color: #4e71f3;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navigation a {
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
   font-size: 1.1em;
   font-weight: 500;
   padding: 8px 16px;
@@ -65,7 +70,7 @@ body {
 }
 
 .navigation a:hover {
-  color: #007bff;
+  color: #e66dda;
 }
 
 nav {
@@ -96,6 +101,9 @@ nav {
 
 /* Dark Theme */
 body.dark-mode {
+  font-family: "Creepster", system-ui;
+  font-size: 800;
+  font-style: normal;
   background-color: #333;
   color: #f1f1f1;
 }
@@ -156,7 +164,12 @@ body.dark-mode .theme-toggle button.light-mode:before {
 }
 
 .front {
-  background: #fab942 url('') no-repeat center center /
+  background: #e66dda url('') no-repeat center center /
+    contain;
+}
+
+body.dark-mode .front {
+   background: #fab942 url('') no-repeat center center /
     contain;
 }
 

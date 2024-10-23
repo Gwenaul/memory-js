@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memory</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <section class="navigation">
@@ -51,45 +54,23 @@
           <label for="email">Adresse mail</label>
         </div>
         <div>
-          <input
-            type="text"
-            id="email"
-            placeholder="mail@domaine.com"
-            required
-          />
+          <input type="text" id="signup-email" placeholder="mail@domaine.com" />
         </div>
         <div>
           <label for="password">Mot de passe</label>
         </div>
         <div>
-          <input type="password" id="password" placeholder="******" required />
-        </div>
-        <div>
-          <label for="date">Date de naissance</label>
-        </div>
-        <div>
-          <input type="date" id="date" placeholder="jj/mm/aaaa" required />
-        </div>
-        <div>
-          <label for="number">Number</label>
-        </div>
-        <div>
-          <input
-            type="number"
-            id="number"
-            placeholder="Numéro Fétiche"
-            required
-          />
+          <input type="password" id="signup-password" placeholder="******" />
         </div>
         <div class="mb-3 d-flex justify-content-center">
           <button class="btn btn-primary">Submit</button>
         </div>
         <section>
-          <h2>Mes Users</h2>
-          <div><ul id="user-list"></ul></div>
+          <!-- <h2>Joueurs</h2>
+          <div><ul id="user-list"></ul></div> -->
         </section>
       </form>
     </div>
-    <script src="js/app.js"></script>
+    <script type="module" src="js/app.js"></script>
   </body>
 </html>
