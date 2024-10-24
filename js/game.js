@@ -2,28 +2,27 @@ import { startTimer, stopTimer } from "./timer.js";
 
 /* ------------------- Gestion du jeu ------------------- */
 export const cardsArray = [
-  { name: "pomme", image: "ressources/1.svg" },
-  { name: "banane", image: "ressources/2.svg" },
-  { name: "brocoli", image: "ressources/3.svg" },
-  { name: "cerise", image: "ressources/4.svg" },
-  { name: "haricot", image: "ressources/5.svg" },
-  { name: "fraise", image: "ressources/6.svg" },
+  { name: "pomme", image: "ressources/1.jpg" },
+  { name: "banane", image: "ressources/2.jpg" },
+  { name: "brocoli", image: "ressources/3.jpg" },
+  { name: "cerise", image: "ressources/4.jpg" },
+  { name: "haricot", image: "ressources/6.jpg" },
+  { name: "fraise", image: "ressources/7.jpg" },
 ];
 
 // Jeux d'images pour les deux thèmes
 export const darkModeImages = [
-  { name: "singe", image: "ressources/dark/1.webp" },
-  { name: "elephant", image: "ressources/dark/2.webp" },
-  { name: "croco", image: "ressources/dark/3.webp" },
-  { name: "facho", image: "ressources/dark/4.webp" },
-  { name: "buffle", image: "ressources/dark/5.webp" },
-  { name: "egnis", image: "ressources/dark/6.webp" },
+  { name: "singe", image: "ressources/dark/a.webp" },
+  { name: "elephant", image: "ressources/dark/b.webp" },
+  { name: "croco", image: "ressources/dark/c.webp" },
+  { name: "facho", image: "ressources/dark/d.webp" },
+  { name: "buffle", image: "ressources/dark/e.webp" },
+  { name: "egnis", image: "ressources/dark/f.webp" },
 ];
 
 export function initMemoryGame() {
   const game = document.getElementById("game");
   if (!game) {
-    
     console.error("L'élément avec l'ID 'game' est introuvable dans le DOM.");
     return; // Arrêter l'exécution si l'élément n'existe pas
   }
@@ -93,10 +92,9 @@ export let coef = 0;
 const totalPairs = cardsArray.length;
 
 function manageCardClicks(grid) {
-  
   grid.addEventListener("click", function (event) {
     const clicked = event.target;
-startTimer();
+    startTimer();
     if (shouldIgnoreClick(clicked)) return;
 
     count++;
@@ -130,11 +128,10 @@ function checkMatch() {
     if (firstGuess === secondGuess) {
       setTimeout(handleMatch, 500);
       matchCounter++;
+      coef = matchCounter;
       if (matchCounter === totalPairs) {
-        coef = matchCounter;
         stopTimer();
         setTimeout(bravoGame, 500);
-        setTimeout(restartGame, 1000);
       }
     } else {
       setTimeout(resetGuesses, 1000);
@@ -162,14 +159,12 @@ function resetGuesses() {
 /* ------------------- Gestion du redémarrage du jeu ------------------- */
 export function restartGame() {
   alert("Le jeu va recommencer.");
-  location.reload(true); 
-  // Peut être remplacé par une vraie réinitialisation des variables
+  location.reload(true);
 }
 /* ------------------- Gestion partie remportée ------------------- */
 export function bravoGame() {
   alert("Bravo! Toutes les paires ont été trouvées.");
-  location.reload(true); 
-  // Peut être remplacé par une vraie réinitialisation des variables
+  setTimeout(restartGame, 1000);
 }
 /* ------------------- Gestion des événements clavier ------------------- */
 document.addEventListener("keydown", function (event) {

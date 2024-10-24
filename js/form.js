@@ -1,9 +1,10 @@
 import { getDatas, setData } from "./storage.js";
-import { refresh } from "./refresh.js";
-import { showPasswordAlert, showMailAlert } from "./popup.js";
+// import { refresh } from "./refresh.js";
+import { showPasswordAlert, showPasswordAlertLight, showPasswordAlertStrong, showMailAlert } from "./popup.js";
 import {
   emailValidator,
   passwordValidator,
+  passwordValidatorLight,
 } from "./validators.js";
 
 // window.onload = init;
@@ -15,7 +16,7 @@ export function initUserList() {
     return; // Arrêter l'exécution si l'élément n'existe pas
   }
   // Display datas
-  refresh(datas, "user-list");
+  // refresh(datas, "user-list");
   // Get datas
   // Add event
   // Target
@@ -47,8 +48,12 @@ export function initUserList() {
 
         case "signup-password": {
           const passTry = input.value;
-          if (passwordValidator(passTry)) {
+          if (passwordValidatorLight(passTry)) {
             user.password = input.value;
+            showPasswordAlertLight(input);
+          } else if (passwordValidator(passTry)) {
+            user.password = input.value;
+            showPasswordAlertStrong(input);
           } else {
             showPasswordAlert(input);
             verif = false;
@@ -66,7 +71,7 @@ export function initUserList() {
     if (verif) {
       datas = setData("users", user);
       // Refresh
-      refresh(datas, "user-list");
+      // refresh(datas, "user-list");
       // Clear inputs
       this.reset();
     } else {

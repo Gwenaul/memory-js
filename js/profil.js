@@ -11,7 +11,7 @@ export function initProfil() {
   // Récupérer l'utilisateur connecté dans le localStorage
   const currentUser = getDatas("currentUser");
   const users = getDatas("users");
-  
+
   // Si aucun utilisateur n'est trouvé (non connecté)
   if (!currentUser) {
     alert("Aucun utilisateur connecté");
@@ -19,26 +19,26 @@ export function initProfil() {
   } else {
     // Afficher les informations de l'utilisateur sur la page
     document.getElementById("email").textContent = currentUser.email;
-    document.getElementById("password").textContent = currentUser.password;
-    document.getElementById("score").textContent = currentUser.score;
+    // document.getElementById("password").textContent = currentUser.password;
+    // document.getElementById("score").textContent = currentUser.score;
 
     // Afficher tous les scores liés à l'email de currentUser
     const userScores = users
       .filter((user) => user.email === currentUser.email) // Filtrer les utilisateurs ayant le même email
       .map((user) => user.score); // Extraire leurs scores
 
-    const scoreListElement = document.getElementById("allScores"); 
+    const scoreListElement = document.getElementById("allScores");
     //  grab l'élément avec l'ID 'allScores' dans  l'HTML
-    scoreListElement.innerHTML = ""; 
+    scoreListElement.innerHTML = "";
     // Vider le contenu avant d'ajouter les scores
 
     // Ajouter chaque score au DOM sous forme de liste
     userScores.forEach((score) => {
-      const scoreItem = document.createElement("li");
-      if (score) {
+      if (score !== 0 && score != null) {
+        const scoreItem = document.createElement("li");
         scoreItem.textContent = `${score}`;
+        scoreListElement.appendChild(scoreItem);
       }
-      scoreListElement.appendChild(scoreItem);
     });
   }
 }

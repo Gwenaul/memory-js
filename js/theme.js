@@ -1,4 +1,4 @@
-
+import { restartGame } from "./game.js";
 
 /* ------------------- Gestion du thème ------------------- */
 export function initThemeToggle() {
@@ -22,6 +22,7 @@ export function initThemeToggle() {
       : "dark-mode";
     localStorage.setItem("theme", newTheme);
     applyTheme(newTheme);
+    restartGame();
   });
   
 }

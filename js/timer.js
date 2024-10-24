@@ -19,13 +19,14 @@ function startTimer() {
 function stopTimer() {
   const currentUser = getDatas("currentUser");
   const users = getDatas("users");
+  let scoreAlert = (99 - seconds) * coef;
   if (currentUser) {
     const userIndex = users.findIndex(
       (user) => user.email === currentUser.email
     );
     const user = users[userIndex];
     // Ajouter ou mettre à jour le champ "score" avec le temps écoulé
-    currentUser.score = (99 - seconds) * coef;
+    currentUser.score = scoreAlert;
     user.score = currentUser.score;
     // Mettre à jour le localStorage avec les nouvelles infos de l'utilisateur
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
@@ -34,8 +35,9 @@ function stopTimer() {
   } else {
     console.log("Utilisateur non trouvé dans le localStorage !");
   }
-  let scoreAlert = (99 - seconds) * coef
-  alert("Bien joué, votre score est de : " + scoreAlert);
+  
+  // scoreAlert = (99 - seconds) * coef
+  alert("Votre score est de : " + scoreAlert);
   clearInterval(timer); // Arrête le timer
   timer = null; // Réinitialise la variable pour permettre de relancer le timer
 }
