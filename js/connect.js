@@ -3,9 +3,9 @@ export function initConnect() {
 
   // Si le formulaire de connexion n'est pas présent, arrêter l'exécution
   if (!formConnexion) {
-    console.error(
-      "Le formulaire de connexion est introuvable, initConnect ne sera pas exécuté."
-    );
+    // console.error(
+    //   "Le formulaire de connexion est introuvable, initConnect ne sera pas exécuté."
+    // );
     return;
   }
 

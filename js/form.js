@@ -12,7 +12,7 @@ export function initUserList() {
   // Get datas
   let datas = getDatas("users");
   if (!datas) {
-    console.error("L'élément avec l'ID 'datas' est introuvable dans le DOM.");
+    // console.error("L'élément avec l'ID 'datas' est introuvable dans le DOM.");
     return; // Arrêter l'exécution si l'élément n'existe pas
   }
   // Display datas
