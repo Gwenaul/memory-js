@@ -44,8 +44,6 @@ export function showPasswordAlertLight(inputElement) {
     popup.remove();
   }, 5000); // La popup disparaît après 5 secondes
 }
-// Exécution : exemple d'utilisation avec un champ de mot de passe
-//const inputElement = document.querySelector('input[type="password"]');
 
 /**
  *
@@ -70,8 +68,6 @@ export function showPasswordAlertStrong(inputElement) {
     popup.remove();
   }, 5000); // La popup disparaît après 5 secondes
 }
-// Exécution : exemple d'utilisation avec un champ de mot de passe
-//const inputElement = document.querySelector('input[type="password"]');
 
 /**
  *
@@ -96,5 +92,3 @@ export function showMailAlert(inputElement) {
     popup.remove();
   }, 5000); // La popup disparaît après 5 secondes
 }
-// Exécution : exemple d'utilisation avec un champ de mot de passe
-//const inputElement = document.querySelector('input[type="password"]');
