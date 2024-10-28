@@ -1,0 +1,243 @@
+/* General Styling */
+body {
+  margin: 20px 0;
+  background: #6589f9 url("../ressources/light/5.jpg") no-repeat
+    center center / cover;
+  padding: 0;
+  font-family: "DynaPuff", sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  color: #f1f1f1;
+  font-size: x-large;
+}
+.paragraph {
+  max-width: 500px;
+  text-align: center;
+}
+
+#signup-form {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  color: white;
+  background-color: #aaa7a7;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.btn {
+  background-color: #6d6363;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: url("../ressources/dark/Golgaripointer_page_04.png"), pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  /* Transition pour les effets */
+}
+
+.btn:hover {
+  background-color: #860202;
+}
+.btn:active {
+  transform: translateY(2px);
+}
+
+/* Responsive Menu - Hidden by default on small screens */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 60px; /* Below the header */
+    right: 0;
+    background-color: none;
+    flex-direction: column;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(127, 35, 35, 0.1);
+    padding: 10px;
+    display: none;
+  }
+
+  .nav-item-outer {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5em;
+    border: none;
+    background-color: transparent;
+    padding: 8px 12px;
+  }
+
+  .menu-toggle:before {
+    content: "☰"; /* Burger menu icon */
+  }
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #4e71f3;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: 8px 16px;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+  color: #e66dda;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item-outer {
+  margin-left: 20px;
+}
+
+.theme-toggle button {
+  padding: 8px 12px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.theme-toggle button:before {
+  content: "☀️"; /* Default to sun icon */
+  font-size: 1.5em;
+}
+
+.theme-toggle button.light-mode:before {
+  content: "🌙"; /* Switch to moon icon */
+}
+
+@font-face {
+  font-family: "Satanic";
+  src: url("../fonts/SatanycDemoniacSt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Dark Theme */
+body.dark-mode {
+  cursor: url("../ressources/dark/BloodyCursor.png"), pointer;
+  font-family: "Satanic", sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-style: normal;
+  background: #333
+    url("../ressources/dark/uqadjuhjhqh91.webp") no-repeat
+    center center / cover;
+  color: #f1f1f1;
+}
+ 
+body.dark-mode .container {
+  background-color: #222;
+}
+
+body.dark-mode .navigation a {
+  color: #f1f1f1;
+  cursor: url("../ressources/dark/Golgaripointer_page_04.png"), pointer;
+}
+
+body.dark-mode .navigation a:hover {
+  color: #ffce00;
+}
+
+body.dark-mode .theme-toggle button:before {
+  content: "☀️"; /* Switch to sun icon */
+}
+
+body.dark-mode .theme-toggle button.light-mode:before {
+  content: "🌙"; /* Back to moon icon */
+}
+
+/* CSS for the game section */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  position: relative;
+  transition: all 0.4s linear;
+  transform-style: preserve-3d;
+  margin: 5px;
+}
+
+.card,
+.back,
+.front {
+  height: 200px;
+  width: 200px;
+}
+
+.back,
+.front {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  background: #e66dda
+    url("../ressources/light/Non-le-bebe-soleil-des-Teletubbies-n-a-pas-eu-de-bebe.jpg")
+    no-repeat center center / cover;
+}
+
+body.dark-mode .front {
+  background: transparent
+    url("../ressources/dark/tombstone_front-Photoroom.png")
+    no-repeat center center / cover;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: none !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.selected {
+  transform: rotateY(180deg);
+}
+
+.match .front {
+  background: none !important;
+}
+
+.match {
+  background-image: none !important;
+}
