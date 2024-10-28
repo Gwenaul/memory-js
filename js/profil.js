@@ -3,9 +3,9 @@ import { getDatas } from "./storage.js";
 export function initProfil() {
   const profilPage = document.getElementById("profilPage");
   if (!profilPage) {
-    console.error(
-      "L'élément avec l'ID 'profilPage' est introuvable dans le DOM."
-    );
+    // console.error(
+    //   "L'élément avec l'ID 'profilPage' est introuvable dans le DOM."
+    // );
     return; // Arrêter l'exécution si l'élément n'existe pas
   }
   // Récupérer l'utilisateur connecté dans le localStorage
