@@ -15,12 +15,10 @@ export function initProfil() {
   // Si aucun utilisateur n'est trouvé (non connecté)
   if (!currentUser) {
     alert("Aucun utilisateur connecté");
-    window.location.href = "connection.html"; // Redirige vers la page de connexion si nécessaire
+    window.location.href = "../connection.html"; // Redirige vers la page de connexion si nécessaire
   } else {
     // Afficher les informations de l'utilisateur sur la page
     document.getElementById("email").textContent = currentUser.email;
-    // document.getElementById("password").textContent = currentUser.password;
-    // document.getElementById("score").textContent = currentUser.score;
 
     // Afficher tous les scores liés à l'email de currentUser
     const userScores = users
